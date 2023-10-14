@@ -1,0 +1,104 @@
+body {
+	background-color: #2f3544;
+}
+
+.App {
+	text-align: center;
+}
+
+.input-group {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.card {
+	max-width: 60%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.card-title {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+}
+
+.card-date {
+	position: absolute;
+	top: 80px;
+	left: 20px;
+}
+
+.card-temp {
+	position: absolute;
+	top: 260px;
+	left: 20px;
+	font-size: 50px;
+}
+
+.card-desc {
+	position: absolute;
+	top: 320px;
+	left: 20px;
+}
+
+.card-img {
+	max-width: 100%;
+	height: auto;
+}
+
+.card-forecast {
+	margin-top: 20px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.card-img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.card-date,
+	.card-desc,
+	.card-temp {
+		position: absolute;
+		margin-top: 10px;
+	}
+
+	.card-temp {
+		top: 140px;
+		font-size: 25px;
+	}
+
+	.card-forecast {
+		margin-top: 10px;
+	}
+
+	.card-text {
+		font-size: 18px;
+	}
+
+	.card-desc {
+		top: 160px;
+		left: 17px;
+		font-size: 12px;
+	}
+
+	.card-desc-icon {
+		width: 35px;
+		height: 35px;
+	}
+
+	hr {
+		margin: 1.6rem 0;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1399px) {
+	.card-desc {
+		top: 240px;
+	}
+
+	.card-temp {
+		top: 190px;
+	}
+}
