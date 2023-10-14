@@ -27,6 +27,8 @@ const WeatherPanel = () => {
 		setLoading(true); //Hago que se vea el spinner
 		setLocation(loc); // Guardo en location la ciudad
 
+		console.log(location);
+
 		//Primero completo la url con lo que busca el usuario
 		urlWeather = urlWeather + cityUrl + loc;
 
