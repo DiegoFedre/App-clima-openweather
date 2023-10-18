@@ -3,13 +3,12 @@ import Form from './Form';
 import Card from './Card';
 
 const WeatherPanel = () => {
-	let urlWeather =
-		'https://api.openweathermap.org/data/2.5/weather?appid=7827e49f806969d5ebe0896f4d5c598a&lang=es';
+	const keyAPI = process.env.REACT_APP_OPENWEATHER_API_KEY;
+	let urlWeather = `https://api.openweathermap.org/data/2.5/weather?appid=${keyAPI}&lang=es`;
 
 	let cityUrl = '&q=';
 
-	let urlForecast =
-		'https://api.openweathermap.org/data/2.5/forecast?appid=7827e49f806969d5ebe0896f4d5c598a&lang=es';
+	let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?appid=${keyAPI}&lang=es`;
 
 	//Voy a almacenar la respuesta del tiempo actual
 	const [weather, setWeather] = useState([]);
@@ -47,7 +46,9 @@ const WeatherPanel = () => {
 				setWeather(weatherData);
 			})
 			.catch((error) => {
-				console.log(error);
+				//console.log(error);
+				console.error('Error al obtener el tiempo actual:', error.message);
+				console.log('API Response:', error.response);
 				setLoading(false);
 				setShow(false);
 
@@ -76,7 +77,9 @@ const WeatherPanel = () => {
 				setShow(true);
 			})
 			.catch((error) => {
-				console.log(error);
+				//console.log(error);
+				console.error('Error al obtener la predicción:', error.message);
+				console.log('API Response:', error.response);
 				setLoading(false);
 				setShow(false);
 				return Promise.reject(error);
